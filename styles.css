@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+h2{
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Muli', sans-serif;
+    font-size: 3rem;
+}
+
+i, svg {
+    pointer-events: none;
+}
+
+.kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+    width: 5rem;
+    height: 5rem;
+    margin: .05rem 0.5rem;
+    cursor: pointer;
+}
+
+.hihat-track,.snare-track,.kick-track,.electronic-track {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.kick,.snare,.hihat, .electronic{
+    display: flex;
+}
+
+.kick-pad{
+    background: rgb(153, 174, 189);
+}
+.snare-pad{
+    background: rgb(175, 132, 139);
+}
+.hihat-pad{
+    background: rgb(145, 185, 147);
+}
+.electronic-pad{
+    background: rgb(140, 113, 143);
+}
+
+.kick-pad.active{
+    background: rgb(25, 116, 177);
+}
+
+.snare-pad.active{
+    background: rgb(177, 42, 64);
+}
+
+.hihat-pad.active{
+    background: rgb(31, 148, 37);
+}
+.electronic-pad.active{
+    background: rgb(145, 13, 172);
+}
+
+.sequencer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* shrinks option selector size vertically to match the original size of the mute button. */
+    flex: 1;
+    margin: 0rem 2rem;
+}
+.controls button {
+    padding: 1rem;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.pad{
+    transition: all 0.5s ease;
+}
+
+.play {
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+select{
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.mute.active {
+    background: rgb(180, 177, 177);
+}
+
+.tempo{
+    margin: 3rem;
+    width: 30%;
+}
+
+.tempo-slider{
+    padding: 0.2rem;
+    -webkit-appearance: none;
+    margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
+    background: rgba(88,88,88);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.tempo p{
+    font-size: 1.5rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+@keyframes playTrack{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+.darkMode{
+    background-color: rgb(29, 28, 28);
+    color:#fff;
+}
+
+footer {
+    color: slategray;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 5rem;
+    z-index: 1;
+}
