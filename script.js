@@ -14,7 +14,7 @@ class DrumKit{
         this.bpm = 120
         // tracks the track placement.
         this.isPlaying = null
-        this.selects = document.querySelectorAll('.select')
+        this.selects = document.querySelectorAll('select')
         this.muteBtn = document.querySelectorAll('.mute')
         this.tempoSlider = document.querySelector('.tempo-slider')
     }
