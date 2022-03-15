@@ -1,6 +1,8 @@
 # BeatMaker
 Music beat maker project. Created with Dev Ed Tutorial with slight modifications. Will be further enhanced over time.
 
+Project is responsive but is not meant to work on devices smaller than a tablet at this time. For best user experience please use a tablet or PC.
+
 Features to be added.
 
 Will be linked with bubbles app through the implementation of sidebar navigation menu.
