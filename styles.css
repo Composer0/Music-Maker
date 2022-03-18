@@ -332,7 +332,6 @@ footer #credit {
         height: 5rem;
         margin: .7rem 0.5rem;
         cursor: pointer;
-        width: 49%;
     }
     
     .hihat-track,.snare-track,.kick-track,.electronic-track {
@@ -348,6 +347,7 @@ footer #credit {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: right;
+        width: 49%;
     }
 
     select{
