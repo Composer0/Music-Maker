@@ -308,6 +308,7 @@ footer #credit {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
+        width: 35%;
     }
     .controls button {
         width: 50%;
@@ -331,6 +332,7 @@ footer #credit {
         height: 5rem;
         margin: .7rem 0.5rem;
         cursor: pointer;
+        width: 49%;
     }
     
     .hihat-track,.snare-track,.kick-track,.electronic-track {
