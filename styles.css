@@ -302,7 +302,7 @@ footer #credit {
     }
 }
 
-@media (max-width: 979) {
+@media (max-width: 979px) {
     .kick,.snare,.hihat, .electronic{
         display: flex;
         flex-direction: row;
