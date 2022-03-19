@@ -328,10 +328,11 @@ footer #credit {
     }
 
     .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
-        width: 5rem;
+        width: 3rem;
         height: 5rem;
-        margin: .7rem 0.5rem;
+        margin: .6rem 0.5rem;
         cursor: pointer;
+        width: 35%;
     }
     
     .hihat-track,.snare-track,.kick-track,.electronic-track {
