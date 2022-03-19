@@ -308,7 +308,7 @@ footer #credit {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
-        width: 35%;
+        width: 60%;
     }
     .controls button {
         width: 50%;
