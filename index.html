@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/d976ef3554.js" crossorigin="anonymous"></script>
+    <title>Music Maker Project</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Beatmaker Project</title>
+    <script src="https://kit.fontawesome.com/d976ef3554.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/favicon.ico">
 </head>
 
 <body class="darkMode">
-    <div id="entireproject">
+    
+    <!-- Nav Button to Switch between -->
+    <div class="top-container">
+        <button class="nav-btn open-btn">Jam</button>
+        <button class="nav-btn close-btn">Beat</button>
+    </div>
+
+    <div id="entireproject" class="">
 
         <div id="drummachine">
             <h2>Beat Machine</h2>
@@ -115,11 +123,11 @@
                 <!-- b0 refers to beat number. Hint hint.-->
             </div>
         </div>
-        <button class="play play.Btn">Play</button>
         <div class="tempo">
             <input type="range" class="tempo-slider" max="300" min="20" value="150">
             <p>Tempo: <span class="tempo-nr">120</span></p>
         </div>
+        <button class="play play.Btn">Play</button>
     </div>
     <audio src="./sounds/kick-classic.wav" class="kick-sound"></audio>
     <audio src="./sounds/snare-acoustic01.wav" class="snare-sound"></audio>
@@ -128,10 +136,10 @@
 </div>
 
 <!-- piano inputs with data-note -->
-<div id="pianoplayer">
+<div id="pianoplayer" class="">
     <div id="title2">
         <h2 id="jamtime">Jam Time</h2>
-        <p id="credit2">Brought to life by Orion Palmer</p>
+        <!-- <p id="credit2">Brought to life by Orion Palmer</p> -->
     </div>
     
     <div class="piano">
@@ -147,6 +155,19 @@
         <div data-note="A" class="key white"></div>
         <div data-note="Bb" class="key black"></div>
         <div data-note="B" class="key white"></div>
+        <div data-note="C" class="key white"></div>
+        <div data-note="Db" class="key black"></div>
+        <div data-note="D" class="key white"></div>
+        <div data-note="Eb" class="key black"></div>
+        <div data-note="E" class="key white"></div>
+        <div data-note="F" class="key white"></div>
+        <div data-note="Gb" class="key black"></div>
+        <div data-note="G" class="key white"></div>
+        <div data-note="Ab" class="key black"></div>
+        <div data-note="A" class="key white"></div>
+        <div data-note="Bb" class="key black"></div>
+        <div data-note="B" class="key white"></div>
+        <div data-note="C" class="key white"></div>
         
     </div>
     
@@ -172,7 +193,7 @@
 </body>
 
 <footer>
-    <p id="credit">Brought to life by Orion Palmer</p>
+    <!-- <p id="credit">Brought to life by Orion Palmer</p> -->
 </footer>
 
 </html>

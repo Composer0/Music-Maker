@@ -257,3 +257,17 @@ function playNote(key) {
         key.classList.remove('active')
     })
 }
+
+// Navigation
+
+const jamMaker = document.querySelector('.open-btn')
+const beatMachine = document.querySelector('.close-btn')
+
+
+jamMaker.addEventListener('click', () => {
+    entireproject.classList.add('visible')
+});
+
+beatMachine.addEventListener('click', () => {
+    entireproject.classList.remove('visible')
+});
