@@ -1,11 +1,27 @@
+// Dark Mode instructions.
+// const toggle = document.querySelector('.toggle')
+
+// toggle.addEventListener('click', (e) => {
+//     const html = document.querySelector('html')
+//     if (html.classList.contains('dark')) {
+//         html.classList.remove('dark')
+//         e.target.innerHTML = 'Dark mode'
+//     } else {
+//         html.classList.add('dark')
+//         e.target.innerHTML = "Light mode"
+//     }
+// })
+
+// Beat Maker Portion
 class DrumKit{
     constructor(){
         this.pads = document.querySelectorAll('.pad')
         this.playBtn = document.querySelector('.play')
-        this.currentKick = '.sounds/kick-classic.wav'
-        this.currentSnare = '.sounds/snare-acoustic01.wav'
-        this.currentHihat = '.sounds/hihat-acoustic01.wav'
-        this.currentElectronic = '.sounds/bubbles.mp3'
+        this.playBtn2 = document.querySelector('.pianoplay')
+        this.currentKick = './sounds/kick-classic.wav'
+        this.currentSnare = './sounds/snare-acoustic01.wav'
+        this.currentHihat = './sounds/hihat-acoustic01.wav'
+        this.currentElectronic = './sounds/bubbles.mp3'
         this.kickAudio = document.querySelector('.kick-sound')
         this.snareAudio = document.querySelector('.snare-sound')
         this.hihatAudio = document.querySelector('.hihat-sound')
@@ -76,24 +92,32 @@ class DrumKit{
             this.playBtn.innerText = 'Stop'
             this.playBtn.classList.add("active")
         }
+        if(this.isPlaying) {
+            this.playBtn2.innerText = 'Play'
+            this.playBtn2.classList.remove('active')
+        } else {
+            this.playBtn2.innerText = 'Stop'
+            this.playBtn2.classList.add("active")
+        }
     }
+
     // Changing the sounds!!!!!!!!!!!!
-    changeSound(e) {
-     const selectionName = e.target.name
-     const selectionValue = e.target.value
-     switch(selectionName){
-         case "kick-select":
-             this.kickAudio.src = selectionValue
-             break
-         case "snare-select":
-             this.snareAudio.src = selectionValue
-             break
-         case "hihat-select":
-             this.hihatAudio.src = selectionValue
-             break
+        changeSound(e) {
+            const selectionName = e.target.name;
+            const selectionValue = e.target.value;
+            switch (selectionName) {
+              case "kick-select":
+                this.kickAudio.src = selectionValue;
+                break;
+              case "snare-select":
+                this.snareAudio.src = selectionValue;
+                break;
+              case "hihat-select":
+                this.hihatAudio.src = selectionValue;
+                break;
          case "electronic-select":
              this.electronicAudio.src = selectionValue
-             break
+             break;
         }
 
     }
@@ -167,6 +191,11 @@ drumKit.playBtn.addEventListener("click", function() {
     drumKit.start()
 })
 
+drumKit.playBtn2.addEventListener("click", function() {
+    drumKit.updateBtn()
+    drumKit.start()
+})
+
 drumKit.selects.forEach(select => {
     select.addEventListener('change', function(e) {
         drumKit.changeSound(e)
@@ -184,3 +213,47 @@ drumKit.tempoSlider.addEventListener('input', function(e) {
 drumKit.tempoSlider.addEventListener('change', function(e) {
     drumKit.updateTempo(e)
 })
+
+
+// Keyboard portion
+const WHITE_KEYS = ['a', 's', 'd', 'j', 'k', 'l', ';'];
+const BLACK_KEYS = ['w', 'e', 'i', 'o', 'p']
+
+const keys = document.querySelectorAll('.key');
+const whiteKeys = document.querySelectorAll('.key.white')
+const blackKeys = document.querySelectorAll('.key.black')
+// .key.black allow for both classes in the same css file to be selected simultaneously.
+
+keys.forEach(key => {
+    key.addEventListener('click', () => playNote(key));
+    // activates function listed below regarding function playNote
+})
+
+document.addEventListener('keydown', e => {
+    // if (e.repeat) return detects if the keydown event is being initiated by the key being held down. If it does, it stops the sounds from continuing.
+    if (e.repeat) return;
+    // key is being established as a new function.
+    const key = e.key;
+    // WHITE_KEY refers to the array. indexOF key is referring to the class of the object slected.
+    const whiteKeyIndex = WHITE_KEYS.indexOf(key)
+    const blackKeyIndex = BLACK_KEYS.indexOf(key)
+
+    // refer to note of what whiteKeyIndex means
+    if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex]);
+    if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex]);
+
+})
+
+function playNote(key) {
+    const noteAudio=document.getElementById(key.dataset.note);
+    // why ID? Notes have ID assigned. Class Names will not work.
+    // instant feedback.
+    noteAudio.currentTime = 0;
+    noteAudio.play();
+    // plays the note. Finds the key class being interacted with and then obtains its dataset. .note refers to the type of dataset being looked for. Theoretically we could also have another data-'type' that was an animal. data-bird="owl". In short. find class and the dataset."type".
+    key.classList.add('active');
+    // this is how you add a class through standard javascript. Key refers to class being selected. 
+    noteAudio.addEventListener('ended', () => {
+        key.classList.remove('active')
+    })
+}
