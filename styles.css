@@ -481,6 +481,9 @@ footer #credit {
         cursor: pointer;
         transition: all 0.5s ease;
     }
+        #pianoplayer {
+        transform: translateX(100%) translateY(-155%);
+    }
 }
 
 @media (max-width: 979px) {
