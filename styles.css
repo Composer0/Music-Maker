@@ -482,7 +482,7 @@ footer #credit {
         transition: all 0.5s ease;
     }
         #pianoplayer {
-        transform: translateX(100%) translateY(-155%);
+        transform: translateX(100%) translateY(-145%);
     }
 }
 
