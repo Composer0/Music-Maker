@@ -49,7 +49,7 @@ i, svg {
     z-index: 1;
     transform: rotateY(0deg);
     position:absolute;
-    transform: translateY(475px);
+    transform: translateY(450%);
     padding: 25px;
     border-radius: 7px;
     left: 20px;
@@ -86,7 +86,7 @@ i, svg {
 .close-btn {
     opacity: 0.7;
     position: fixed;
-    transform: translateX(10px)translateY(325px);
+    transform: translateX(10px)translateY(290%);
 }
 
 .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
@@ -321,29 +321,11 @@ footer #credit {
 
 @media (max-height: 700px) {
     .nav-btn {
-        transform: translateY(250px);
+        transform: translateY(100%);
     }
     
     .close-btn {
-        transform: translateX(10px)translateY(400px);
-    }
-}
-@media (max-height: 550px) {
-    .nav-btn {
-        transform: translateY(150px);
-    }
-    
-    .close-btn {
-        transform: translateX(10px)translateY(300px);
-    }
-}
-@media (max-height: 400px) {
-    .nav-btn {
-        transform: translateY(100px);
-    }
-    
-    .close-btn {
-        transform: translateX(10px)translateY(250px);
+        transform: translateX(10px)translateY(300%);
     }
 }
 
@@ -481,7 +463,8 @@ footer #credit {
         cursor: pointer;
         transition: all 0.5s ease;
     }
-        #pianoplayer {
+
+    #pianoplayer {
         transform: translateX(100%) translateY(-145%);
     }
 }
