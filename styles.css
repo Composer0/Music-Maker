@@ -319,6 +319,34 @@ footer #credit {
     margin: 1rem auto 4rem;
 }
 
+@media (max-height: 700px) {
+    .nav-btn {
+        transform: translateY(250px);
+    }
+    
+    .close-btn {
+        transform: translateX(10px)translateY(400px);
+    }
+}
+@media (max-height: 550px) {
+    .nav-btn {
+        transform: translateY(150px);
+    }
+    
+    .close-btn {
+        transform: translateX(10px)translateY(300px);
+    }
+}
+@media (max-height: 400px) {
+    .nav-btn {
+        transform: translateY(100px);
+    }
+    
+    .close-btn {
+        transform: translateX(10px)translateY(250px);
+    }
+}
+
 @media (max-width: 1700px) {
 
     body{
