@@ -402,6 +402,10 @@ footer #credit {
 }
 
 @media (max-width: 1200px) {
+    body {
+        overflow-y: visible;
+    }
+
     .darkMode{
         background-color: rgb(29, 28, 28);
         color:#fff;
@@ -504,6 +508,7 @@ footer #credit {
         display: flex;
         align-items: center;
         width: 80%;
+        flex-direction: column;
         justify-content: space-between;
         margin-top: 2rem;
     }
@@ -536,13 +541,14 @@ footer #credit {
     .controls {
         display: flex;
         flex-direction: column;
-        justify-content:flex-start;
+        justify-content:space-between;
         align-items:center;
         /* shrinks option selector size vertically to match the original size of the mute button. */
         flex: 1;
         margin: 0rem 2rem;
-        width: 30%;
+        /* width: 50%; */
     }
+
     .controls button {
         padding: 1rem;
         border: none;
@@ -551,31 +557,40 @@ footer #credit {
         cursor: pointer;
         transition: all 0.5s ease;
     }
+    
+    .mute {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
 
+    .select {
+        width: 10rem;
+
+    }
     #electronicname {
         content: 'Elec.';
-        font-size: 16px;
+        /* font-size: 16px; */
     }
 }
 
 @media (max-width: 685px) {
+    .top-container {
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        left: 500px;
+    }
     .kick,.snare,.hihat, .electronic{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: right;
+        justify-content: center;
         width: 50%;
+
     }
-    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+    /* .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
         width: 5rem;
         height: 5rem;
         cursor: pointer;
-    }
-}
-
-@media (max-width: 505px) {
-    .controls {
-        justify-content: flex-start;
-        margin: 0rem 0rem;
-    }
+    } */
 }
