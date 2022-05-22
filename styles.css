@@ -50,17 +50,18 @@ i, svg {
     transform: rotateY(0deg);
     position:absolute;
     transform: translateY(450%);
-    padding: 25px;
     border-radius: 7px;
     left: 20px;
     box-shadow: .3px .2px #111111;
+    width: 10%;
+    height: 10%;
+    align-items: center;
 }
 
 .open-btn {
-    opacity: 0.8;
+    opacity: 0.7;
     position: fixed;
-    top: 10px;
-    left: 30px;
+    transform: translateX(10px)translateY(200%);
     z-index: 1;
     /* background-color: #143F6b; */
 }
@@ -86,7 +87,7 @@ i, svg {
 .close-btn {
     opacity: 0.7;
     position: fixed;
-    transform: translateX(10px)translateY(290%);
+    transform: translateX(10px)translateY(20%);
 }
 
 .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
@@ -225,13 +226,27 @@ select{
 }
 
 footer #credit {
-    color: slategray;
+    color: rgb(32, 100, 168);
     width: 100%;
     position: absolute;
     text-align: center;
     top: 4rem;
     z-index: 1;
     font-size: 1rem;
+}
+
+footer #credit a {
+    text-decoration: none;
+}
+
+footer #credit a::after {
+    text-decoration: none;
+    color: rgb(32, 100, 168);
+}
+
+footer #credit a:visited {
+    text-decoration: none;
+    color: rgb(32, 100, 168);
 }
 
 #pianoplayer {
@@ -334,7 +349,6 @@ footer #credit {
     body{
         font-family: sans-serif;
         overflow-y: visible;
-        overflow-x: visible;
     }
 
     .darkMode{
@@ -585,12 +599,44 @@ footer #credit {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        width: 50%;
+        width: 80%;
 
     }
-    /* .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
         width: 5rem;
         height: 5rem;
         cursor: pointer;
-    } */
+    }
+    .tempo p {
+        margin: auto;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 665px) {
+    .kick,.snare,.hihat, .electronic{
+        width: 90%;
+    }
+}
+
+@media (max-width: 533px) {
+    .kick,.snare,.hihat, .electronic{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kick, .snare,.hihat, .electronic {
+        width: 100%;
+    }
+
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+    }
+
+
 }
