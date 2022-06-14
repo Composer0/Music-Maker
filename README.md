@@ -1,5 +1,6 @@
 # Music Maker
-Music Maker Project.
+
+https://www.orionpalmer.com/Beatmaker%20Project/index.html
 
 Project is responsive but is not meant to work on devices smaller than a tablet at this time. For best user experience please use a tablet or PC. (It can still work on a smart phone but animations are limited and sizing in a vertical space is cumbersome.)
 
