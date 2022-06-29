@@ -22,6 +22,7 @@ Fun feature is to allow instrument families to be swapped into Beat Maker(must a
 
 Transfer Beat Maker inputs into music notation of quarter notes and quarter rests.
 
+<br>
 
-## Recording-with-EJS-&-Mongoose Branch
+# Recording-with-EJS-&-Mongoose Branch
 Purpose of this branch to further develop the app with a recording feature. Incorporates Node.js, Express.js, EJS and Mongoose.
