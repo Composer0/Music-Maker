@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 16px !important;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(#797979, #051620) !important;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ffc62842 !important;
+    border: 1px solid #061c29 !important;
+    border-radius: 7px !important;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a766126e !important;
+    border: 1px solid rgb(30, 9, 148) !important;
+  }
+
+#entireproject {
+    max-height: 100vh;
+}
+
+h2{
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Muli', sans-serif;
+    font-size: 3rem;
+}
+
+p {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding-top: 1.5rem;
+}
+
+#credit {
+    padding-top: 1.5rem;
+}
+
+i, svg {
+    pointer-events: none;
+}
+
+.nav-btn {
+    color:rgba(0, 0, 0, 0.986);
+    border:solid #071420;
+    background-color: rgb(136, 207, 201); 
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1;
+    transform: rotateY(0deg);
+    position:absolute;
+    transform: translateY(450%);
+    border-radius: 7px;
+    left: 20px;
+    box-shadow: .3px .2px #111111;
+    width: 10%;
+    height: 10%;
+    align-items: center;
+}
+
+.open-btn {
+    opacity: 0.7;
+    position: fixed;
+    transform: translateX(10px)translateY(150%);
+    z-index: 1;
+    /* background-color: #143F6b; */
+}
+
+.open-btn:hover, .open-btn:focus {
+    color: #fff;
+    z-index: 1;
+    background-color: rgb(7, 135, 145);
+}
+
+.open-btn .visible{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: #fff;
+    background-color: rgb(7, 135, 145);
+}
+
+.close-btn {
+    opacity: 0.7;
+    position: fixed;
+    transform: translateX(10px)translateY(20%);
+}
+
+.rec-btn {
+    opacity: 0.7;
+    background-color:rgba(136, 207, 201);
+    position: fixed;
+    left: 30px;
+    transform: translateY(650px);
+}
+
+.rec-btn:hover {
+    background-color: rgba(138, 10, 31);
+    color: #fff;
+    transition: ease-in-out .5s;
+}
+
+.recording {
+    opacity: 1;
+    background-color: rgb(138, 10, 31);
+    color: #fff;
+    box-shadow: 0 0 30px 15px #ff1a1a;
+    transition: ease-in-out .5s;
+}
+
+.kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+    width: 5rem;
+    height: 5rem;
+    margin: .05rem 0.5rem;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.hihat-track,.snare-track,.kick-track,.electronic-track {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.kick,.snare,.hihat, .electronic{
+    display: flex;
+}
+
+.kick-pad{
+    background: rgb(153, 174, 189);
+}
+.snare-pad{
+    background: rgb(175, 132, 139);
+}
+.hihat-pad{
+    background: rgb(145, 185, 147);
+}
+.electronic-pad{
+    background: rgb(140, 113, 143);
+}
+
+.kick-pad.active{
+    background: rgb(25, 116, 177);
+}
+
+.snare-pad.active{
+    background: rgb(177, 42, 64);
+}
+
+.hihat-pad.active{
+    background: rgb(31, 148, 37);
+}
+.electronic-pad.active{
+    background: rgb(145, 13, 172);
+}
+
+.sequencer {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* shrinks option selector size vertically to match the original size of the mute button. */
+    flex: 1;
+    margin: 0rem 2rem;
+}
+.controls button {
+    padding: 1rem;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.pad{
+    transition: all 0.5s ease;
+}
+
+.play {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+select {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+    width: 40%;
+    cursor: pointer;
+}
+
+.mute.active {
+    background: rgb(180, 177, 177);
+}
+
+.tempo{
+    margin: 3rem auto 1rem;
+    width: 30%;
+}
+
+.tempo-slider{
+    padding: 0.2rem;
+    -webkit-appearance: none;
+    margin: 0rem 0rem;
+    width: 100%;
+    position: relative;
+    background: rgba(88,88,88);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.tempo p{
+    font-size: 1.5rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+@keyframes playTrack{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+.darkMode{
+    background-color: rgb(29, 28, 28);
+    color:#fff;
+}
+
+footer #credit {
+    color: rgb(32, 100, 168);
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 4rem;
+    z-index: 1;
+    font-size: 1rem;
+}
+
+footer #credit a {
+    text-decoration: none;
+}
+
+footer #credit a::after {
+    text-decoration: none;
+    color: rgb(32, 100, 168);
+}
+
+footer #credit a:visited {
+    text-decoration: none;
+    color: rgb(32, 100, 168);
+}
+
+#pianoplayer {
+    background-color: rgb(29, 28, 28);
+    margin: 0;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    transform: translateX(100%) translateY(-115%);
+}
+
+#entireproject.visible {
+    transform: translateX(-100%)
+}
+
+#pianoplayer.visible {
+    transform: translateX(0);
+}
+
+#jamtime {
+    font-size: 3rem;
+    margin: 2rem auto 0;
+}
+
+#credit2 {
+    color: slategray;
+    width: 100%;
+    text-align: center;
+    top: 0rem;
+    z-index: 1;
+    font-size: 1rem;
+}
+
+.piano {
+    /* ensures keys are lined up side by side. Body only makes sure that all components are lined up side by side which would be disadvantagious if there were multiple pianos. */
+    margin: 10rem auto 0;
+    min-height: 55vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: row;
+    max-width: 95%;
+}
+
+.key {
+    /* diy method. Use calculations from the width to generate a height for each key. With this you can eliminate two lines of code referring to height. */
+    width: var(--width);
+    height: calc(var(--width) * 4);
+}
+
+.white {
+    --width: 100px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.white.active {
+    background: #ccc;
+}
+
+.black {
+    /* height is initiated from top to bottom. It drips like blood on the walls. */
+    /* css variable example. The hyphens prior refer to when the var was first introduced in the .key class. */
+    --width: 60px;
+    background-color: black;
+    /* negative margins ensure that the black notes do not take up their own space. Closer to image of typical piano. */
+    margin-left: -30px;
+    /* alternative margin-left and right can also use the css variable formulas.
+    ex. calc(var(--width) / -2);
+    this still provides the answer of -30px.
+    I prefer just saying pxs out right. But if I have to work with media query this method would be preferred as it would cut down on code significatnly because the calculations would always be running instead of having to mentally recalulate the margins precisely on our on own. Less code would mean that the site would run quicker.
+    For now leave it. Alter it in the future. Leave these notes for future viewers. */
+    margin-right: -30px;
+    z-index: 2;
+}
+
+.black.active {
+    background-color: #333;
+}
+
+.pianoplay {
+    margin: 1rem auto 4rem;
+}
+
+@media (max-height: 700px) {
+    .nav-btn {
+        transform: translateX(10px)translateY(250%);
+    }
+    
+    .close-btn {
+        transform: translateX(10px)translateY(450%);
+    }
+    .rec-btn {
+        transform: translateX(0px)translateY(650%);
+    }
+}
+
+@media (max-width: 1700px) {
+
+    body{
+        font-family: sans-serif;
+        overflow-y: visible;
+    }
+
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+        width: 5rem;
+        height: 5rem;
+        margin: .7rem 0.5rem;
+        cursor: pointer;
+    }
+    
+    .hihat-track,.snare-track,.kick-track,.electronic-track {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+    
+    .kick,.snare,.hihat, .electronic{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: right;
+    }
+
+    select{
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .sequencer {
+        font-size: 14px;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        margin-top: 0.5rem;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items:center;
+        /* shrinks option selector size vertically to match the original size of the mute button. */
+        flex: 1;
+        margin: 0rem 2rem;
+    }
+    .controls button {
+        padding: 1rem;
+        border: none;
+        background: rgb(0, 0, 0);
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    
+}
+
+@media (max-width: 1200px) {
+    body {
+        overflow-y: visible;
+    }
+
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+        width: 5rem;
+        height: 5rem;
+        margin: .7rem 0.5rem;
+        cursor: pointer;
+    }
+    
+    .hihat-track,.snare-track,.kick-track,.electronic-track {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+    
+    .kick,.snare,.hihat, .electronic{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: right;
+        width: 49%;
+    }
+
+    select{
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .sequencer {
+        font-size: 14px;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        margin-top: 0.5rem;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items:center;
+        /* shrinks option selector size vertically to match the original size of the mute button. */
+        flex: 1;
+        margin: 0rem 2rem;
+    }
+    .controls button {
+        padding: 1rem;
+        border: none;
+        background: rgb(0, 0, 0);
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    #pianoplayer {
+        transform: translateX(100%) translateY(-145%);
+    }
+}
+
+@media (max-width: 979px) {
+    .kick,.snare,.hihat, .electronic{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 60%;
+    }
+    .controls button {
+        width: 50%;
+        padding: 1rem;
+        border: none;
+        background: rgb(0, 0, 0);
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+        width: 5rem;
+        height: 5rem;
+        cursor: pointer;
+    }
+    
+    .hihat-track,.snare-track,.kick-track,.electronic-track {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+    
+    .kick,.snare,.hihat, .electronic{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: right;
+        width: 70%;
+    }
+    
+    select{
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .sequencer {
+        font-size: 14px;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        margin-top: 0.5rem;
+    }
+
+    
+    .controls {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        align-items:center;
+        /* shrinks option selector size vertically to match the original size of the mute button. */
+        flex: 1;
+        margin: 0rem 2rem;
+        /* width: 50%; */
+    }
+
+    .controls button {
+        padding: 1rem;
+        border: none;
+        background: rgb(0, 0, 0);
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+    
+    .mute {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .select {
+        width: 10rem;
+
+    }
+    #electronicname {
+        content: 'Elec.';
+        /* font-size: 16px; */
+    }
+}
+
+@media (max-width: 685px) {
+    .top-container {
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        left: 500px;
+    }
+    .kick,.snare,.hihat, .electronic{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+
+    }
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+        width: 5rem;
+        height: 5rem;
+        cursor: pointer;
+    }
+    .tempo p {
+        margin: auto;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 665px) {
+    .kick,.snare,.hihat, .electronic{
+        width: 90%;
+    }
+}
+
+@media (max-width: 533px) {
+    .kick,.snare,.hihat, .electronic{
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kick, .snare,.hihat, .electronic {
+        width: 100%;
+    }
+
+    .kick-pad,.snare-pad,.hihat-pad,.electronic-pad{
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+    }
+
+
+}

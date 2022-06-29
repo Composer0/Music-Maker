@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Maker Project</title>
+    <link rel="stylesheet" type ="text/css" href="/styles.css">
+    <script src="https://kit.fontawesome.com/d976ef3554.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body class="darkMode">
+    
+    <!-- Nav Button to Switch between -->
+    <div class="top-container">
+        <button class="nav-btn open-btn">JAM</button>
+        <button class="nav-btn close-btn">BEAT</button>
+        <button class="nav-btn rec-btn">REC</button>
+    </div>
+
+    <div id="entireproject" class="">
+
+        <div id="drummachine">
+            <h2>Beat Machine</h2>
+            <div class="sequencer">
+                <div class="kick-track">
+                    <div class="controls">
+                        <h1>Kick</h1>
+                        <button data-track="0" class="mute kick-volume">
+                            <i class="fas fa-volume-mute"></i>
+                        </button>
+                        <select name="kick-select" id="kick-select" class="select">
+                            <option value="/sounds/kick-classic.wav">Classic Kick</option>
+                            <option value="/sounds/kick-808.wav">808 Kick</option>
+                            <option value="/sounds/kick-heavy.wav">Kick Heavy</option>
+                            <option value="/sounds/kick-softy.wav">Kick Softy</option>
+                            <!-- option allows for the selection of audio track. -->
+                        </select>
+                    </div>
+                    <div class="kick">
+                        <div class="pad kick-pad b0"><p>1</p></div>
+                        <div class="pad kick-pad b1"><p>&</p></div>
+                    <div class="pad kick-pad b2"><p>2</p></div>
+                    <div class="pad kick-pad b3"><p>&</p></div>
+                    <div class="pad kick-pad b4"><p>3</p></div>
+                    <div class="pad kick-pad b5"><p>&</p></div>
+                    <div class="pad kick-pad b6"><p>4</p></div>
+                    <div class="pad kick-pad b7"><p>&</p></div>
+                    <!-- b0 refers to beat number. Hint hint.-->
+                </div>
+            </div>
+            <div class="snare-track">
+                <div class="controls">
+                    <h1>Snare</h1>
+                    <button data-track="1" class="mute snare-volume">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    <select name="snare-select" id="snare-select" class="select">
+                        <option value="/sounds/snare-acoustic01.wav">Acoustic Snare</option>
+                        <option value="/sounds/Snare-808.wav">808 Snare</option>
+                        <option value="/sounds/snare-vinyl02.wav">Vinyl Snare</option>
+                    </select>
+                </div>
+                <div class="snare">
+                    <div class="pad snare-pad b0"><p>1</p></div>
+                    <div class="pad snare-pad b1"><p>&</p></div>
+                    <div class="pad snare-pad b2"><p>2</p></div>
+                    <div class="pad snare-pad b3"><p>&</p></div>
+                    <div class="pad snare-pad b4"><p>3</p></div>
+                    <div class="pad snare-pad b5"><p>&</p></div>
+                    <div class="pad snare-pad b6"><p>4</p></div>
+                    <div class="pad snare-pad b7"><p>&</p></div>
+                </div>
+            </div>
+            <div class="hihat-track">
+                <div class="controls">
+                    <h1>Hi Hat</h1>
+                    <button data-track="2" class="mute hihat-volume">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    <select name="hihat-select" id="hihat-select" class="select">
+                        <option value="/sounds/hihat-acoustic01.wav">Acoustic Hi Hat</option>
+                        <option value="/sounds/hihat-808.wav">808 Hi Hat</option>
+                    </select>
+                </div>
+                <div class="hihat">
+                    <div class="pad hihat-pad b0"><p>1</p></div>
+                    <div class="pad hihat-pad b1"><p>&</p></div>
+                    <div class="pad hihat-pad b2"><p>2</p></div>
+                    <div class="pad hihat-pad b3"><p>&</p></div>
+                    <div class="pad hihat-pad b4"><p>3</p></div>
+                    <div class="pad hihat-pad b5"><p>&</p></div>
+                    <div class="pad hihat-pad b6"><p>4</p></div>
+                    <div class="pad hihat-pad b7"><p>&</p></div>
+                    <!-- b0 refers to beat number. Hint hint.-->
+                </div>
+            </div>
+            <div class="electronic-track">
+                <div class="controls">
+                    <h1 id="electronicname">Electronic</h1>
+                    <button data-track="3" class="mute electronic-volume">
+                        <i class="fas fa-volume-mute"></i>
+                </button>
+                <select name="electronic-select" id="electronic-select" class="select">
+                    <option value="/sounds/bubbles.mp3">Bubbles</option>
+                    <option value="/sounds/clay.mp3">Clay</option>
+                    <option value="/sounds/confetti.mp3">Confetti</option>
+                    <option value="/sounds/glimmer.mp3">Glimmer</option>
+                    <option value="/sounds/moon.mp3">Moon</option>
+                    <option value="/sounds/ufo.mp3">UFO</option>
+                </select>
+            </div>
+            <div class="electronic">
+                <div class="pad electronic-pad b0"><p>1</p></div>
+                <div class="pad electronic-pad b1"><p>&</p></div>
+                <div class="pad electronic-pad b2"><p>2</p></div>
+                <div class="pad electronic-pad b3"><p>&</p></div>
+                <div class="pad electronic-pad b4"><p>3</p></div>
+                <div class="pad electronic-pad b5"><p>&</p></div>
+                <div class="pad electronic-pad b6"><p>4</p></div>
+                <div class="pad electronic-pad b7"><p>&</p></div>
+                <!-- b0 refers to beat number. Hint hint.-->
+            </div>
+        </div>
+        <div class="tempo">
+            <input type="range" class="tempo-slider" max="300" min="20" value="150">
+            <p>Tempo: <span class="tempo-nr">120</span></p>
+        </div>
+        <button class="play play.Btn">Play</button>
+    </div>
+    <audio src="/sounds/kick-classic.wav" class="kick-sound"></audio>
+    <audio src="/sounds/snare-acoustic01.wav" class="snare-sound"></audio>
+    <audio src="/sounds/hihat-acoustic01.wav" class="hihat-sound"></audio>
+    <audio src="/sounds/bubbles.mp3" class="electronic-sound"></audio>
+</div>
+
+<!-- piano inputs with data-note -->
+<div id="pianoplayer" class="">
+    <div id="title2">
+        <h2 id="jamtime">Jam Time</h2>
+        <!-- <p id="credit2">Brought to life by Orion Palmer</p> -->
+    </div>
+    
+    <div class="piano">
+        <div data-note="C" class="key white"></div>
+        <div data-note="Db" class="key black"></div>
+        <div data-note="D" class="key white"></div>
+        <div data-note="Eb" class="key black"></div>
+        <div data-note="E" class="key white"></div>
+        <div data-note="F" class="key white"></div>
+        <div data-note="Gb" class="key black"></div>
+        <div data-note="G" class="key white"></div>
+        <div data-note="Ab" class="key black"></div>
+        <div data-note="A" class="key white"></div>
+        <div data-note="Bb" class="key black"></div>
+        <div data-note="B" class="key white"></div>
+        <div data-note="C" class="key white"></div>        
+    </div>
+    
+    <button class="play pianoplay play.Btn">Play</button>
+    
+    <!-- audio sources with ids. -->
+    <audio id='C' src="/notes/C.mp3"></audio>
+    <audio id='Db' src="/notes/Db.mp3"></audio>
+    <audio id='D' src="/notes/D.mp3"></audio>
+    <audio id='Eb' src="/notes/Eb.mp3"></audio>
+    <audio id='E' src="/notes/E.mp3"></audio>
+    <audio id='F' src="/notes/F.mp3"></audio>
+    <audio id='Gb' src="/notes/Gb.mp3"></audio>
+    <audio id='G' src="/notes/G.mp3"></audio>
+    <audio id='Ab' src="/notes/Ab.mp3"></audio>
+    <audio id='A' src="/notes/A.mp3"></audio>
+    <audio id='Bb' src="/notes/Bb.mp3"></audio>
+    <audio id='B' src="/notes/B.mp3"></audio>
+</div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+
+<footer>
+    <p id="credit">Brought to life by <span><a href="http://www.orionpalmer.com" target="_blank">Orion Palmer</a></span></p>
+</footer>
+
+</html>
