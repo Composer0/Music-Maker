@@ -21,3 +21,7 @@ Add track to piano player that allows all keys to become a different sound. Sepe
 Fun feature is to allow instrument families to be swapped into Beat Maker(must add additional sound files as well).
 
 Transfer Beat Maker inputs into music notation of quarter notes and quarter rests.
+
+
+## Recording-with-EJS-&-Mongoose Branch
+Purpose of this branch to further develop the app with a recording feature. Incorporates Node.js, Express.js, EJS and Mongoose.
