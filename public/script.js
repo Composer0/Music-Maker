@@ -224,6 +224,17 @@ const whiteKeys = document.querySelectorAll('.key.white')
 const blackKeys = document.querySelectorAll('.key.black')
 // .key.black allow for both classes in the same css file to be selected simultaneously.
 
+//returns a new object of mapping the keys.
+const keyMap = [...keys].reduce((map, key) => {
+    map[key.dataset.note] = key
+    return map
+}, {})
+
+// We are creating key/id values for each of the notes/pitches. ex.{C : key[0]}
+
+let recordingStartTime
+let songNotes
+
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
     // activates function listed below regarding function playNote
@@ -245,6 +256,7 @@ document.addEventListener('keydown', e => {
 })
 
 function playNote(key) {
+    if (isRecording()) recordNote(key.dataset.note)
     const noteAudio=document.getElementById(key.dataset.note);
     // why ID? Notes have ID assigned. Class Names will not work.
     // instant feedback.
@@ -276,9 +288,57 @@ beatMachine.addEventListener('click', () => {
 // Recording Songs
 
 const recordButton = document.querySelector('.rec-btn');
+const replayButton = document.querySelector('.repeat-btn');
+const saveButton = document.querySelector('.save-btn');
 
 recordButton.addEventListener('click', toggleRecording)
+saveButton.addEventListener('click', saveSong)
+replayButton.addEventListener('click', playSong)
 
 function toggleRecording() {
     recordButton.classList.toggle('recording')
+    if (isRecording()) {
+        startRecording()
+    } else {
+        stopRecording()
+    }
+}
+
+function isRecording() {
+    return recordButton != null && recordButton.classList.contains('recording')
+}
+
+function startRecording() {
+    recordingStartTime = Date.now()
+    songNotes =[]
+}
+
+function stopRecording() {
+    replayButton.classList.remove('hidden');
+    saveButton.classList.remove('hidden');
+}
+
+function playSong() {
+    if (songNotes.length === 0 ) return
+    songNotes.forEach(note => {
+        setTimeout(()=> {
+            setTimeout(() => {
+                playNote(keyMap[note.key])
+            }, note.startTime)
+        })
+    })
+    console.log(songNotes)
+}
+
+function recordNote(note) {
+    songNotes.push({
+        key: note,
+        startTime: Date.now() - recordingStartTime
+    })
+}
+
+function saveSong() {
+    axios.post('/songs', {songNotes: songNotes}).then(res => {
+        console.log(res.data)
+    })
 }

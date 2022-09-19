@@ -115,16 +115,44 @@ i, svg {
 
 .rec-btn {
     opacity: 0.7;
-    background-color:rgba(136, 207, 201);
+    background-color:rgb(207, 138, 136);
     position: fixed;
     left: 30px;
     transform: translateY(650px);
+}
+.repeat-btn {
+    opacity: 0.7;
+    background-color:rgb(136, 193, 207);
+    position: fixed;
+    left: 30px;
+    transform: translateY(500px);
+}
+.save-btn {
+    opacity: 0.7;
+    background-color:rgb(136, 207, 148);
+    position: fixed;
+    left: 30px;
+    transform: translateY(750px);
 }
 
 .rec-btn:hover {
     background-color: rgba(138, 10, 31);
     color: #fff;
-    transition: ease-in-out .5s;
+    transition: ease-in-out .1s;
+}
+.save-btn:hover {
+    background-color: rgb(27, 126, 36);
+    color: #fff;
+    transition: ease-in-out .1s;
+}
+.repeat-btn:hover {
+    background-color: rgb(3, 142, 177);
+    color: #fff;
+    transition: ease-in-out .1s;
+}
+
+.hidden {
+    display: none;
 }
 
 .recording {
