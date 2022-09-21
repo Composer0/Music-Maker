@@ -135,12 +135,26 @@ i, svg {
     transform: translateY(750px);
 }
 
+.view-btn {
+    opacity: 0.7;
+    background-color:rgb(136, 207, 148);
+    position: absolute;
+    left: 30px;
+    transform: translateY(400px);
+    z-index: 3;
+}
+
 .rec-btn:hover {
     background-color: rgba(138, 10, 31);
     color: #fff;
     transition: ease-in-out .1s;
 }
 .save-btn:hover {
+    background-color: rgb(27, 126, 36);
+    color: #fff;
+    transition: ease-in-out .1s;
+}
+.view-btn:hover {
     background-color: rgb(27, 126, 36);
     color: #fff;
     transition: ease-in-out .1s;
