@@ -233,7 +233,8 @@ const keyMap = [...keys].reduce((map, key) => {
 // We are creating key/id values for each of the notes/pitches. ex.{C : key[0]}
 
 let recordingStartTime
-let songNotes
+let songNotes = currentSong && currentSong.notes
+
 
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
@@ -290,6 +291,8 @@ beatMachine.addEventListener('click', () => {
 const recordButton = document.querySelector('.rec-btn');
 const replayButton = document.querySelector('.repeat-btn');
 const saveButton = document.querySelector('.save-btn');
+const viewButton = document.querySelector('.view-btn');
+
 
 recordButton.addEventListener('click', toggleRecording)
 saveButton.addEventListener('click', saveSong)
@@ -339,6 +342,10 @@ function recordNote(note) {
 
 function saveSong() {
     axios.post('/songs', {songNotes: songNotes}).then(res => {
+        viewButton.classList.remove('hidden');
+        viewButton.href = `/songs/${res.data._id}`
         console.log(res.data)
     })
 }
+
+console.log(currentSong)

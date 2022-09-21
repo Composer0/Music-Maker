@@ -5,46 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" href="../img/favicon.ico" type="image/any-icon">
-    <title>Music Maker Project</title>
-    <link rel="stylesheet" type ="text/css" href="/styles.css">
-    <script>
-        const currentSong = <%- JSON.stringify(locals.song) %>
-    </script>
-    <script src="https://kit.fontawesome.com/d976ef3554.js" crossorigin="anonymous"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-
     <title>Music Maker Project</title>
     <link rel="stylesheet" type ="text/css" href="/styles.css">
     <script src="https://kit.fontawesome.com/d976ef3554.js" crossorigin="anonymous"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <link rel="icon" href="img/favicon.ico">
-
 </head>
 
 <body class="darkMode">
     
     <!-- Nav Button to Switch between -->
     <div class="top-container">
-
-        <% if (locals.song) == null { %>
-            <button class="nav-btn rec-btn">REC</button>
-            <% } else { %>
-                <button class="nav-btn rec-btn">RECORD NEW SONG</button>
-           <% } %>
-        <button class="nav-btn close-btn">BEAT MAKER</button>
-        <button class="nav-btn open-btn">PIANO</button>
-        <button class="nav-btn repeat-btn hidden <%= locals.song !=null : ' %>">PIANO REPEAT</button>
-        <button class="nav-btn save-btn hidden">SAVE</button>
-        <button href="#" class="nav-btn view-btn song-link hidden">VIEW SONG(S)</button>
-
-        <button class="nav-btn close-btn">BEAT MAKER</button>
-        <button class="nav-btn open-btn">PIANO</button>
+        <button class="nav-btn open-btn">JAM</button>
+        <button class="nav-btn close-btn">BEAT</button>
         <button class="nav-btn rec-btn">REC</button>
-        <button class="nav-btn repeat-btn hidden">PIANO REPEAT</button>
-        <button class="nav-btn save-btn hidden">SAVE</button>
-
     </div>
 
     <div id="entireproject" class="">
@@ -169,7 +142,6 @@
         <h2 id="jamtime">Jam Time</h2>
         <!-- <p id="credit2">Brought to life by Orion Palmer</p> -->
     </div>
-
     
     <div class="piano">
         <div data-note="C" class="key white"></div>
