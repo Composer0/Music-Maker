@@ -159,6 +159,7 @@ i, svg {
     color: #fff;
     transition: ease-in-out .1s;
 }
+
 .repeat-btn:hover {
     background-color: rgb(3, 142, 177);
     color: #fff;

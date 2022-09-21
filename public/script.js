@@ -235,6 +235,7 @@ const keyMap = [...keys].reduce((map, key) => {
 let recordingStartTime
 let songNotes = currentSong && currentSong.notes
 
+
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
     // activates function listed below regarding function playNote
@@ -291,6 +292,7 @@ const recordButton = document.querySelector('.rec-btn');
 const replayButton = document.querySelector('.repeat-btn');
 const saveButton = document.querySelector('.save-btn');
 const viewButton = document.querySelector('.view-btn');
+
 
 recordButton.addEventListener('click', toggleRecording)
 saveButton.addEventListener('click', saveSong)
