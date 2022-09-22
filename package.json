@@ -6,7 +6,6 @@
   "scripts": {
     "devStart": "nodemon server.js"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
