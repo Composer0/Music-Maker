@@ -21,13 +21,13 @@
     <div class="top-container">
         <% if (locals.song == null) { %>
             <button class="nav-btn rec-btn">REC</button>
+            <button class="nav-btn save-btn hidden">SAVE</button>
             <% } else { %>
                 <button class="nav-btn rec-btn">RECORD NEW SONG</button>
            <% } %>
            <button class="nav-btn repeat-btn hidden <%= locals.song != null ? 'hidden' : '' %>">PIANO REPEAT</button>
         <button class="nav-btn close-btn">BEAT MAKER</button>
         <button class="nav-btn open-btn">PIANO</button>
-        <button class="nav-btn save-btn hidden">SAVE</button>
         <button href="#" class="nav-btn view-btn song-link hidden">VIEW SONG(S)</button>
     </div>
 

@@ -287,6 +287,9 @@ beatMachine.addEventListener('click', () => {
 
 
 // Recording Songs
+// axios.defaults.baseURL = API_ENDPOINT;
+
+// axios.interceptor
 
 const recordButton = document.querySelector('.rec-btn');
 const replayButton = document.querySelector('.repeat-btn');
@@ -313,6 +316,8 @@ function isRecording() {
 function startRecording() {
     recordingStartTime = Date.now()
     songNotes = []
+    replayButton.classList.add('hidden');
+    saveButton.classList.add('hidden');
 }
 
 function stopRecording() {
@@ -329,7 +334,7 @@ function playSong() {
             }, note.startTime)
         })
     })
-    console.log(songNotes)
+    // console.log(songNotes)
 }
 
 function recordNote(note) {
@@ -340,11 +345,11 @@ function recordNote(note) {
 }
 
 function saveSong() {
-    axios.post('/songs', {songNotes: songNotes}).then(res => {
-        viewButton.classList.remove('hidden');
+    viewButton.classList.remove('hidden');
+    axios.post('/songs', { songNotes: songNotes }).then(res => {
         viewButton.href = `/songs/${res.data._id}`
         console.log(res.data)
     })
 }
 
-console.log(currentSong)
+// console.log(currentSong)

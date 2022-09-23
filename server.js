@@ -21,14 +21,13 @@ app.get('/', (req, res) => {
 
 //sends song to server.
 app.post('/songs', async(req, res) => {
-    // const song = new Song({
-        // notes: 
-        req.body.songNotes
-    // })
+    const song = new Song({
+        notes: req.body.songNotes
+    })
 
-    // await song.save()
+    await song.save()
 
-    // res.json(song);
+    res.json(song);
 })
 
 app.get('/songs/:id', async (req, res) => {
