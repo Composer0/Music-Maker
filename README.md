@@ -25,5 +25,7 @@ Transfer Beat Maker inputs into music notation of quarter notes and quarter rest
 <br>
 
 # Recording-with-EJS-&-Mongoose Branch
-Purpose of this branch to further develop the app with a recording feature. Incorporates Node.js, Express.js, EJS and Mongoose.
+Purpose of this branch to further develop the app with a recording feature. Incorporates Node.js runtime environemnt, EJS templating (soon to be replaced with React), and implements Express.js routing through the use of the Mongoose JS library.
 
+"Save", "Replay", and "View Song" buttons have now been incorporated. 
+"Replay" performs the most recent recorded piano input. At this point in the program, inputs are not saved into the database. To save in the database (MongoDBCompass), the user must select "Save". Upon selecting "Save" the information will be stored into the assigned database, in our application that is known as songrecorder.songs. To view the inputs and timings of the most recently saved song during the session, users can select "View Song" and the console.log will populate the information.
