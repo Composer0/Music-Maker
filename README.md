@@ -1,29 +1,40 @@
 # Music Maker
 
-### EJS, CSS, JavaScript, Node.js, Express, MongoDB, Mongoose
-
 https://www.orionpalmer.com/projects/BeatmakerProject/index.html
 
-Project is responsive but is not meant to work on devices smaller than a tablet at this time. For best user experience please use a tablet or PC. (It can still work on a smart phone but animations are limited and sizing in a vertical space is cumbersome.)
+## Beat Maker 
 
-Project focuses on the use of creating sequences within JavaScript to play sounds in a looped pattern. Tracks are introduced to change the sound of the selected track which are based on the displayed instrument.
+The "Beat Maker" script allows users to create and play beats using a virtual drum machine interface. This documentation provides an overview of the script's components, functions, and user interactions.
 
-Piano Player has been introduced into the program and features fully playable keys that can work simultaneously with the Beat Maker. Piano Player functions through linking data.audio to keydowns of keys found in array.
+### Script Components
 
-Because this is a one page app we have introduced a basic navigation button clicker that allows for the two pages to be switched between by having the piano app off screen and then quickly snapped into view upon nav click. Play button in the piano app is synced to the Beat Maker app as well. Apps can be switched between in the middle of play.
+1. **Constructor and Initialization**
+   - Initializes various DOM elements and properties required for the drum kit functionality.
+   - Sets default values for audio sources, indexes, BPM, and play state.
 
-# Features to be added.
+2. **Functions**
+   - `activePad()`: Toggles the "active" class on a pad when clicked.
+   - `repeat()`: Animates and plays sounds for each active pad in the current step of the loop.
+   - `start()`: Initiates the loop playback, calculating the interval based on the BPM.
+   - `updateBtn()`: Updates the play button's text and appearance based on the play state.
+   - `changeSound(e)`: Changes the sound source of a specific drum element based on user selections.
+   - `mute(e)`: Mutes/unmutes audio tracks based on user interactions.
+   - `changeTempo(e)`: Updates the BPM value and tempo text based on the slider input.
+   - `updateTempo(e)`: Updates the loop playback interval based on the new BPM.
 
-Add track to piano player that allows all keys to become a different sound. Seperate file folder may make the task easier.
+3. **Event Listeners**
+   - Adds event listeners for various interactions, such as pad clicks, play button clicks, sound selections, mute toggles, and tempo changes.
+   - Handles keyboard interactions to trigger drum sounds using keys.
+   - Includes event listeners to show/hide the drum machine interface.
 
-Fun feature is to allow instrument families to be swapped into Beat Maker(must add additional sound files as well).
+### Keyboard Interaction
 
-Transfer Beat Maker inputs into music notation of quarter notes and quarter rests.
+The script also provides keyboard interaction for triggering drum sounds using specific keys. White and black keys are defined, and event listeners are set up to detect key presses. When a key is pressed, the corresponding note is played.
 
-<br>
+### Navigation
 
-# Recording-with-EJS-&-Mongoose Branch
-Purpose of this branch to further develop the app with a recording feature. Incorporates Node.js runtime environemnt, EJS templating (soon to be replaced with React), and implements Express.js routing through the use of the Mongoose JS library.
+The script handles navigation between the beat maker and another section using buttons. Event listeners are added to the buttons to toggle the visibility of the beat maker interface.
 
-"Save", "Replay", and "View Song" buttons have now been incorporated. 
-"Replay" performs the most recent recorded piano input. At this point in the program, inputs are not saved into the database. To save in the database (MongoDBCompass), the user must select "Save". Upon selecting "Save" the information will be stored into the assigned database, in our application that is known as songrecorder.songs. To view the inputs and timings of the most recently saved song during the session, users can select "View Song" and the console.log will populate the information.
+### Conclusion
+
+The "Beat Maker" script demonstrates how to create an interactive drum machine interface that allows users to create beats by clicking pads, using keyboard keys, and controlling playback settings. Developers can learn from this script to create their own music-related web applications or interactive interfaces with audio functionality.
